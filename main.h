@@ -65,7 +65,7 @@ int		ft_atoi(char *s, int *errflg);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 void	read_argv(t_stack *s, int argc, char **argv);
 
-void	print_num(int d);
+void	print_num(long d);
 void	print_total(int d);
 void	print_stack_col(t_stack *s);
 void	print_stack_row(t_stack *s);

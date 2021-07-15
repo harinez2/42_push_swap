@@ -1,9 +1,15 @@
 #include "main.h"
 
-void	print_num(int d)
+void	print_num(long d)
 {
 	char	c;
 
+	if (d < 0)
+	{
+		write(1, "-", 1);
+		print_num(d * -1);
+		return ;
+	}
 	if (d >= 10)
 		print_num(d / 10);
 	c = d % 10 + '0';
