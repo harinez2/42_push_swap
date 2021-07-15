@@ -1,30 +1,5 @@
 #include "main.h"
 
-static void	ft_putchars(char *s)
-{
-	write(1, s, ft_strlen(s));
-}
-
-static void	print_usage_exit(void)
-{
-	ft_putchars("usage: ./push_swap [OPTIONS] ARRAY_OF_INT\n");
-	ft_putchars("\n");
-	ft_putchars("Options:\n");
-	ft_putchars("    -v      Show contents of the stack.\n");
-	ft_putchars("    -c      Add color to the operations.\n");
-	ft_putchars("ARRAY_OF_INT:\n");
-	ft_putchars("    Int array, each separated by a space.\n");
-	ft_putchars("\n");
-	ft_putchars("Example:\n");
-	ft_putchars("    When you run the following command:\n");
-	ft_putchars("      ./push_swap 0 2 1\n");
-	ft_putchars("    Then, You'll get the follwoing results.\n");
-	ft_putchars("      sa\n");
-	ft_putchars("      ra\n");
-	ft_putchars("\n");
-	exit (0);
-}
-
 static int	check_finished(t_stack *s)
 {
 	int	i;
@@ -75,7 +50,7 @@ int	main(int argc, char **argv)
 	t_stack	s;
 
 	if (argc < 2)
-		print_usage_exit();
+		return (0);
 	init_stack(&s, DISP_ON, 0);
 	read_argv(&s, argc, argv);
 	if (s.dbg)
