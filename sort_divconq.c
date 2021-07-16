@@ -39,7 +39,7 @@ static double	calc_mid_v(t_stack *s, int warr, int cnt)
 	}
 	bubble_sort(c, cnt);
 	if (cnt % 2 == 0)
-		return ((c[cnt / 2 - 1] + c[cnt / 2]) / 2);
+		return (((double)c[cnt / 2 - 1] + (double)c[cnt / 2]) / 2);
 	else
 		return (c[cnt / 2]);
 }
