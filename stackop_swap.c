@@ -16,7 +16,7 @@ void	sa(t_stack *s)
 		else
 			write(1, "sa\n", 3);
 	}
-	if (s->dbg && s->dsp)
+	if (s->dbg)
 	{
 		print_stack_col(s);
 		s->op_cnt++;
@@ -39,7 +39,7 @@ void	sb(t_stack *s)
 		else
 			write(1, "sb\n", 3);
 	}
-	if (s->dbg && s->dsp)
+	if (s->dbg)
 	{
 		print_stack_col(s);
 		s->op_cnt++;
@@ -48,13 +48,13 @@ void	sb(t_stack *s)
 
 void	ss(t_stack *s)
 {
-	int	dsp;
+	int	dbg;
 
-	dsp = s->dsp;
-	s->dsp = DISP_OFF;
+	dbg = s->dbg;
+	s->dbg = DBG_OFF;
 	sa(s);
 	sb(s);
-	s->dsp = dsp;
+	s->dbg = dbg;
 	if (s->dsp)
 	{
 		if (s->color)

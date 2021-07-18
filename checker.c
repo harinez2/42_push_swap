@@ -29,27 +29,27 @@ static void	check_and_print_ans(t_stack *s)
 
 static void	exec_op(t_stack *s, char *line)
 {
-	if (ft_strncmp("rra", line, 3) == 0)
+	if (ft_strncmp("rra", line, 4) == 0)
 		rra(s);
-	else if (ft_strncmp("rrb", line, 3) == 0)
+	else if (ft_strncmp("rrb", line, 4) == 0)
 		rrb(s);
-	else if (ft_strncmp("rrr", line, 3) == 0)
+	else if (ft_strncmp("rrr", line, 4) == 0)
 		rrr(s);
-	else if (ft_strncmp("sa", line, 2) == 0)
+	else if (ft_strncmp("sa", line, 3) == 0)
 		sa(s);
-	else if (ft_strncmp("sb", line, 2) == 0)
+	else if (ft_strncmp("sb", line, 3) == 0)
 		sb(s);
-	else if (ft_strncmp("ss", line, 2) == 0)
+	else if (ft_strncmp("ss", line, 3) == 0)
 		ss(s);
-	else if (ft_strncmp("pa", line, 2) == 0)
+	else if (ft_strncmp("pa", line, 3) == 0)
 		pa(s);
-	else if (ft_strncmp("pb", line, 2) == 0)
+	else if (ft_strncmp("pb", line, 3) == 0)
 		pb(s);
-	else if (ft_strncmp("ra", line, 2) == 0)
+	else if (ft_strncmp("ra", line, 3) == 0)
 		ra(s);
-	else if (ft_strncmp("rb", line, 2) == 0)
+	else if (ft_strncmp("rb", line, 3) == 0)
 		rb(s);
-	else if (ft_strncmp("rr", line, 2) == 0)
+	else if (ft_strncmp("rr", line, 3) == 0)
 		rr(s);
 }
 
@@ -76,10 +76,10 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	init_stack(&s, DISP_OFF, 0);
+	init_stack(&s, DISP_OFF, DBG_OFF);
 	read_argv(&s, argc, argv);
 	if (s.dbg)
-		s.dsp = DISP_ON;
+		print_stack_col(&s);
 	line = NULL;
 	i = 1;
 	while (0 < i)

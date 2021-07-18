@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	init_stack(&s, DISP_ON, 0);
+	init_stack(&s, DISP_ON, DBG_OFF);
 	read_argv(&s, argc, argv);
 	if (s.dbg)
 		print_stack_col(&s);

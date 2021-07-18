@@ -76,7 +76,7 @@ void	read_argv(t_stack *s, int argc, char **argv)
 	{
 		if (ft_strncmp(argv[i], "-v", 3) == 0)
 		{
-			s->dbg = 1;
+			s->dbg = DBG_ON;
 			continue ;
 		}
 		if (ft_strncmp(argv[i], "-c", 3) == 0)

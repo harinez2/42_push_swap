@@ -11,6 +11,9 @@
 # define DISP_ON	1
 # define DISP_OFF	0
 
+# define DBG_ON		1
+# define DBG_OFF	0
+
 # define ARR_A		2
 # define ARR_B		3
 
